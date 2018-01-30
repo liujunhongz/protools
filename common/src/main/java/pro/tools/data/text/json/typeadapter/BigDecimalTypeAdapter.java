@@ -1,12 +1,15 @@
 package pro.tools.data.text.json.typeadapter;
 
-import org.google.gson.stream.JsonReader;
-import org.google.gson.stream.JsonWriter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
 
 import java.io.IOException;
 import java.math.BigDecimal;
 
-public class BigDecimalTypeAdapter extends ABasicTypeAdapter<BigDecimal> {
+/**
+ * @author SeanDragon
+ */
+public class BigDecimalTypeAdapter extends BaseTypeAdapter<BigDecimal> {
 
     @Override
     public BigDecimal reading(JsonReader jsonReader) throws IOException {

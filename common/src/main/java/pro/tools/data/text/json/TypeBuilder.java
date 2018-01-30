@@ -8,6 +8,9 @@ import pro.tools.data.text.json.typeimpl.WildcardTypeImpl;
 import java.lang.reflect.Type;
 import java.util.List;
 
+/**
+ * @author SeanDragon
+ */
 public class TypeBuilder {
     private final TypeBuilder parent;
     private final Class raw;
@@ -33,7 +36,7 @@ public class TypeBuilder {
         return newInstance(raw, this);
     }
 
-    public TypeBuilder endSubType() {
+    public TypeBuilder endSubType() throws TypeException {
         if (parent == null) {
             throw new TypeException("expect beginSubType() before endSubType()");
         }

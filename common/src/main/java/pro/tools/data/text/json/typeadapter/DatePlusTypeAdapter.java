@@ -1,7 +1,7 @@
 package pro.tools.data.text.json.typeadapter;
 
-import org.google.gson.stream.JsonReader;
-import org.google.gson.stream.JsonWriter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
 import pro.tools.time.DatePlus;
 import pro.tools.time.ToolDatePlus;
 
@@ -13,7 +13,7 @@ import java.time.format.DateTimeFormatter;
  *
  * @author sd
  */
-public class DatePlusTypeAdapter extends ABasicTypeAdapter<DatePlus> {
+public class DatePlusTypeAdapter extends BaseTypeAdapter<DatePlus> {
 
     private static final DateTimeFormatter DATE_TIME_FORMATTER = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss:SSS");
 

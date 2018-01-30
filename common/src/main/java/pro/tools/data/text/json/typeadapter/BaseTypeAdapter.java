@@ -1,14 +1,17 @@
 package pro.tools.data.text.json.typeadapter;
 
-import org.google.gson.TypeAdapter;
-import org.google.gson.stream.JsonReader;
-import org.google.gson.stream.JsonToken;
-import org.google.gson.stream.JsonWriter;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonToken;
+import com.google.gson.stream.JsonWriter;
 
 import java.io.IOException;
 
-public abstract class ABasicTypeAdapter<T> extends TypeAdapter<T> {
-    public ABasicTypeAdapter() {
+/**
+ * @author SeanDragon
+ */
+public abstract class BaseTypeAdapter<T> extends TypeAdapter<T> {
+    BaseTypeAdapter() {
     }
 
     @Override
@@ -25,8 +28,28 @@ public abstract class ABasicTypeAdapter<T> extends TypeAdapter<T> {
         }
     }
 
+    /**
+     * 读取值
+     *
+     * @param jsonReader
+     *         gson的阅读器
+     *
+     * @return 返回值
+     *
+     * @throws IOException
+     */
     public abstract T reading(JsonReader jsonReader) throws IOException;
 
+    /**
+     * 赋值
+     *
+     * @param jsonWriter
+     *         gson的书写器
+     * @param value
+     *         想要赋上的值
+     *
+     * @throws IOException
+     */
     public abstract void writing(JsonWriter jsonWriter, T value) throws IOException;
 
     protected boolean compareToken(JsonToken currentToken, JsonToken targetToken) {

@@ -1,7 +1,7 @@
 package pro.tools.data.text.json.typeadapter;
 
-import org.google.gson.stream.JsonReader;
-import org.google.gson.stream.JsonWriter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
 
 import java.io.IOException;
 import java.sql.Timestamp;
@@ -11,7 +11,7 @@ import java.time.format.DateTimeFormatter;
 /**
  * @author SeanDragon
  */
-public class LocalDateTimeTypeAdapter extends ABasicTypeAdapter<LocalDateTime> {
+public class LocalDateTimeTypeAdapter extends BaseTypeAdapter<LocalDateTime> {
 
     private static final DateTimeFormatter DATE_TIME_FORMATTER = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss:SSS");
 

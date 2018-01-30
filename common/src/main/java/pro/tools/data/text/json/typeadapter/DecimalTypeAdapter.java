@@ -1,12 +1,15 @@
 package pro.tools.data.text.json.typeadapter;
 
-import org.google.gson.stream.JsonReader;
-import org.google.gson.stream.JsonWriter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
 import pro.tools.data.decimal.Decimal;
 
 import java.io.IOException;
 
-public class DecimalTypeAdapter extends ABasicTypeAdapter<Decimal> {
+/**
+ * @author SeanDragon
+ */
+public class DecimalTypeAdapter extends BaseTypeAdapter<Decimal> {
 
     @Override
     public Decimal reading(JsonReader jsonReader) throws IOException {
